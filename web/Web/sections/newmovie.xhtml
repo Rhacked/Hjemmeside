@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="../templates/masterLayout.xhtml">
+        <ui:define name="content">
+            <h:head>
+                <title></title>
+                <link rel="stylesheet" type="text/css" href="../css/mastercss.css"/>
+            </h:head>
+            <h:body>
+                <h1>Ny film</h1>
+                <h:form>
+                    <table>
+                        <tr>
+                            <td>
+                                Navn:
+                            </td>
+                            <td>
+                                <h:inputText value="#{movie.name}">
+                                    <f:validateLength minimum="1"/>
+                                </h:inputText>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Kategori:
+                            </td>
+                            <td>
+                                <h:selectOneMenu value="#{movie.kategori}">
+                                    <f:selectItem itemValue="Action" itemLabel="Action"/>
+                                    <f:selectItem itemValue="Komedie" itemLabel="Komedie"/>
+                                    <f:selectItem itemValue="Drama" itemLabel="Drama"/>
+                                    <f:selectItem itemValue="Fantasy" itemLabel="Fantasy"/>
+                                    <f:selectItem itemValue="Eventyr" itemLabel="Eventyr"/>
+                                    <f:selectItem itemValue="Sci-Fi" itemLabel="Sci-Fi"/>
+                                </h:selectOneMenu>       
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Tid:
+                            </td>
+                            <td>
+                                <h:inputText value="#{movie.runtime}">
+                                    <f:validateLength minimum="1"/>
+                                </h:inputText>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:commandButton value="Send" action="#{movie.newMovie()}"/>
+                            </td>
+                        </tr>
+                    </table>
+                </h:form>
+            </h:body>
+        </ui:define>
+    </ui:composition>
+</html>
+

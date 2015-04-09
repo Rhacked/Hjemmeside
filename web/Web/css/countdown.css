@@ -1,0 +1,32 @@
+/* 
+    Document   : countdowncss
+    Created on : Nov 12, 2013, 10:48:32 PM
+    Author     : Rubenhag
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    background-color: black;
+}
+
+#countdown{
+    font-size: 42px;
+    position: fixed;
+    left:30%;
+    top: 40%;
+    color: red;
+}
+
+#download{
+    position: fixed;
+    left: 45%;
+    top: 50%;
+}
+
+
+

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../templates/masterLayout.xhtml">
+            <ui:define name="content">
+                <h1>Database</h1>
+                <h:dataTable value="#{user.users}" var="c">
+                    <h:column>
+                        <f:facet name="header">User ID</f:facet>
+                            #{c.userID}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Username</f:facet>
+                            #{c.username}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">First Name</f:facet>
+                            #{c.first_name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Last Name</f:facet>
+                            #{c.last_name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Password</f:facet>
+                            #{c.password}
+                    </h:column>
+                </h:dataTable>
+                <h:dataTable value="#{movie.movies}" var="m">
+                    <h:column>
+                        <f:facet name="header">Navn</f:facet>
+                            #{m.name}
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Kategori</f:facet>
+                            #{m.kategori}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Runtime</f:facet>
+                            #{m.runtime}
+                    </h:column>
+                </h:dataTable>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
